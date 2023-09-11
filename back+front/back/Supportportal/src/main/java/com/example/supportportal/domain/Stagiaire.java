@@ -46,11 +46,16 @@ public class Stagiaire extends AppUser {
 		this.numCIN = numCIN;
 		this.stages = stages;
 	}
+	
+	
+	
 	 
 	
 	public Stagiaire() {
 		
 	}
+	
+	
 	
 	
 

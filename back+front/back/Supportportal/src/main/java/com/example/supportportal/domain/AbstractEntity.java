@@ -20,7 +20,7 @@ import lombok.experimental.SuperBuilder;
 @SuperBuilder
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
+
 @MappedSuperclass
 @EntityListeners(AuditingEntityListener.class)
 public class AbstractEntity implements Serializable {
@@ -39,6 +39,57 @@ public class AbstractEntity implements Serializable {
     @LastModifiedDate
     @Column(name = "lastModifiedDate" )
     private Instant lastModifiedDate;
+
+
+	public Long getId() {
+		return id;
+	}
+
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+
+	public Instant getCreationDate() {
+		return creationDate;
+	}
+
+
+	public void setCreationDate(Instant creationDate) {
+		this.creationDate = creationDate;
+	}
+
+
+	public Instant getLastModifiedDate() {
+		return lastModifiedDate;
+	}
+
+
+	public void setLastModifiedDate(Instant lastModifiedDate) {
+		this.lastModifiedDate = lastModifiedDate;
+	}
+
+
+	public static long getSerialversionuid() {
+		return serialVersionUID;
+	}
+
+
+	public AbstractEntity() {
+		
+	}
+
+
+	public AbstractEntity(Long id, Instant creationDate, Instant lastModifiedDate) {
+		super();
+		this.id = id;
+		this.creationDate = creationDate;
+		this.lastModifiedDate = lastModifiedDate;
+	}
+    
+    
+    
 }
 
 
